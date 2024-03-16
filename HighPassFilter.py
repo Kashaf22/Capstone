@@ -20,7 +20,7 @@ acc_y = data[:, 2]
 acc_z = data[:, 3]
 
 lowcut_freq = 3  # Lower cutoff frequency (Hz)
-highcut_freq = 400.0  # Higher cutoff frequency (Hz)
+highcut_freq = 00.0  # Higher cutoff frequency (Hz)
 sample_rate = 833  # Sample rate (Hz)
 order = 2 # Filter order
 
@@ -33,12 +33,12 @@ filtered_acc_z = Mask(sosfilt(butter(order, [low, high], btype='band', analog=Fa
 
 # Plot the filtered data
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 6))
-ax1.plot((time-time[0]), filtered_acc_y, linewidth=1.0)
+ax1.plot((time-time[0]), filtered_acc_z, linewidth=1.0)
 ax1.set_title('Filtered Acceleration Data')
 ax1.set_xlabel('Time (s)')
 ax1.set_ylabel('Acceleration (g)')
 
-ax2.plot((time-time[0]), acc_y, linewidth=1.0)
+ax2.plot((time-time[0]), acc_z, linewidth=1.0)
 ax2.set_title('Original Acceleration Data')
 ax2.set_xlabel('Time (s)')
 ax2.set_ylabel('Acceleration (g)')
